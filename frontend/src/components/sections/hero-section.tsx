@@ -15,24 +15,22 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 isolate"
     >
-      {/* Animated Background */}
-      <div className="absolute inset-0 hero-pattern">
-        <div className="absolute inset-0 bg-white/50 dark:bg-black/50 backdrop-blur-3xl" />
+      {/* Video Background - stays within section bounds */}
+      <div className="absolute inset-0 -z-10">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="/travel .mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40 dark:bg-black/60" />
       </div>
-
-      {/* Floating Elements */}
-      <motion.div
-        animate={{ y: [0, -20, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-32 right-10 w-20 h-20 bg-gradient-to-br from-sky-400 to-cyan-500 rounded-2xl opacity-20 blur-xl"
-      />
-      <motion.div
-        animate={{ y: [0, 20, 0] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-32 left-10 w-32 h-32 bg-gradient-to-br from-orange-400 to-pink-500 rounded-full opacity-20 blur-xl"
-      />
 
       <div className="container-custom relative z-10 section-padding">
         <div className="max-w-5xl mx-auto text-center">
@@ -41,10 +39,10 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card-strong mb-8 backdrop-blur-md"
           >
-            <Sparkles className="w-4 h-4 text-sky-500" />
-            <span className="text-sm font-medium">
+            <Sparkles className="w-4 h-4 text-sky-400" />
+            <span className="text-sm font-medium text-white">
               AI-Powered Travel Planning
             </span>
           </motion.div>
@@ -54,11 +52,11 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-6"
+            className="mb-6 text-white drop-shadow-lg"
           >
             Discover Your Next
             <br />
-            <span className="gradient-text">Dream Destination</span>
+            <span className="gradient-text drop-shadow-lg">Dream Destination</span>
           </motion.h1>
 
           {/* Subheading */}
@@ -66,7 +64,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-3xl mx-auto"
+            className="text-xl text-white/90 mb-12 max-w-3xl mx-auto drop-shadow-md"
           >
             Let AI craft your perfect journey. Smart recommendations, seamless
             booking, and unforgettable experiences await.
@@ -191,9 +189,9 @@ export function HeroSection() {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-gray-400 dark:border-gray-600 rounded-full flex justify-center pt-2"
+          className="w-6 h-10 border-2 border-white/60 rounded-full flex justify-center pt-2"
         >
-          <div className="w-1.5 h-3 bg-gray-400 dark:bg-gray-600 rounded-full" />
+          <div className="w-1.5 h-3 bg-white/60 rounded-full" />
         </motion.div>
       </motion.div>
     </section>
