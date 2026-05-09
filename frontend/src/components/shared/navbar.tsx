@@ -5,6 +5,7 @@ import { Menu, X, Plane } from "lucide-react";
 import { useTheme } from "next-themes";
 import { ThemeToggle } from "./theme-toggle";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -31,14 +32,13 @@ export function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
           ? "backdrop-blur-md shadow-lg"
           : "backdrop-blur-sm"
-      }`}
+        }`}
       style={{
-        backgroundColor: isScrolled 
-          ? 'rgba(var(--color-background), 0.95)' 
+        backgroundColor: isScrolled
+          ? 'rgba(var(--color-background), 0.95)'
           : 'rgba(var(--color-background), 0.8)',
       }}
     >
@@ -70,9 +70,12 @@ export function Navbar() {
           {/* Right Side Actions */}
           <div className="flex items-center gap-4">
             <ThemeToggle />
-            <button className="hidden md:block btn-primary text-sm">
-              Login
-            </button>
+
+            <Link href="/login">
+              <button className="hidden md:block btn-primary text-sm">
+                Login
+              </button>
+            </Link>
 
             {/* Mobile Menu Button */}
             <button
