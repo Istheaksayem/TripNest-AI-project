@@ -10,9 +10,9 @@ import { NewsletterSection } from "@/components/sections/newsletter-section";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <Navbar />
-      <main>
+      <main className="bg-background">
         <HeroSection />
         <DestinationsSection />
         <FeaturesSection />

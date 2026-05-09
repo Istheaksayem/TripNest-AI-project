@@ -51,7 +51,9 @@
   }
 
   body {
-    @apply bg-white dark:bg-black text-[rgb(var(--color-text))] antialiased;
+    @apply antialiased;
+    background-color: rgb(var(--color-background));
+    color: rgb(var(--color-text));
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
@@ -106,6 +108,51 @@
 /* UTILITIES LAYER - Reusable Classes */
 /* ================================== */
 @layer utilities {
+  /* Color Utilities - Using CSS Variables */
+  .bg-background {
+    background-color: rgb(var(--color-background));
+  }
+
+  .bg-surface {
+    background-color: rgb(var(--color-surface));
+  }
+
+  .text-primary {
+    color: rgb(var(--color-text));
+  }
+
+  .text-muted {
+    color: rgb(var(--color-text-muted));
+  }
+
+  .border-custom {
+    border-color: rgb(var(--color-border));
+  }
+
+  .bg-primary {
+    background-color: rgb(var(--color-primary));
+  }
+
+  .bg-secondary {
+    background-color: rgb(var(--color-secondary));
+  }
+
+  .bg-accent {
+    background-color: rgb(var(--color-accent));
+  }
+
+  .text-primary-color {
+    color: rgb(var(--color-primary));
+  }
+
+  .text-secondary-color {
+    color: rgb(var(--color-secondary));
+  }
+
+  .text-accent-color {
+    color: rgb(var(--color-accent));
+  }
+
   /* Container Utility */
   .container-custom {
     @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
@@ -165,11 +212,15 @@
 
   /* Card Styles */
   .card {
-    @apply bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg;
+    background-color: rgb(var(--color-background));
+    border: 1px solid rgb(var(--color-border));
+    @apply rounded-2xl shadow-lg;
   }
 
   .card-hover {
-    @apply bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1;
+    background-color: rgb(var(--color-background));
+    border: 1px solid rgb(var(--color-border));
+    @apply rounded-2xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1;
   }
 
   /* Shadow System */
