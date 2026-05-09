@@ -84,7 +84,7 @@ export function HeroSection() {
                   Where to?
                 </label>
                 <div className="relative">
-                  <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none z-10" />
                   <input
                     type="text"
                     placeholder="Destination"
@@ -92,7 +92,7 @@ export function HeroSection() {
                     onChange={(e) =>
                       setSearchData({ ...searchData, destination: e.target.value })
                     }
-                    className="input-field pl-10"
+                    className="w-full px-4 py-3 pl-11 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200"
                   />
                 </div>
               </div>
@@ -103,14 +103,14 @@ export function HeroSection() {
                   Check In
                 </label>
                 <div className="relative">
-                  <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none z-10" />
                   <input
                     type="date"
                     value={searchData.checkIn}
                     onChange={(e) =>
                       setSearchData({ ...searchData, checkIn: e.target.value })
                     }
-                    className="input-field pl-10"
+                    className="w-full px-4 py-3 pl-11 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200"
                   />
                 </div>
               </div>
@@ -121,14 +121,14 @@ export function HeroSection() {
                   Check Out
                 </label>
                 <div className="relative">
-                  <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none z-10" />
                   <input
                     type="date"
                     value={searchData.checkOut}
                     onChange={(e) =>
                       setSearchData({ ...searchData, checkOut: e.target.value })
                     }
-                    className="input-field pl-10"
+                    className="w-full px-4 py-3 pl-11 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200"
                   />
                 </div>
               </div>
@@ -139,13 +139,13 @@ export function HeroSection() {
                   Guests
                 </label>
                 <div className="relative">
-                  <Users className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <Users className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none z-10" />
                   <select
                     value={searchData.guests}
                     onChange={(e) =>
                       setSearchData({ ...searchData, guests: e.target.value })
                     }
-                    className="input-field pl-10"
+                    className="w-full px-4 py-3 pl-11 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200"
                   >
                     <option value="1">1 Guest</option>
                     <option value="2">2 Guests</option>
