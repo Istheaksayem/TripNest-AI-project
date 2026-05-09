@@ -15,10 +15,19 @@ export function AuthLayout({ children, title, subtitle }: AuthLayoutProps) {
     <div className="min-h-screen bg-background flex">
       {/* Left Side - Promotional */}
       <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden">
-        {/* Background Video or Image */}
-        <div className="absolute inset-0 bg-gradient-to-br from-sky-500 via-cyan-500 to-blue-600">
-          {/* Animated Background Pattern */}
-          <div className="absolute inset-0 hero-pattern opacity-30" />
+        {/* Background Video */}
+        <div className="absolute inset-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/travel .mp4" type="video/mp4" />
+          </video>
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/50 to-black/70" />
           
           {/* Floating Elements */}
           <motion.div
